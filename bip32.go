@@ -117,7 +117,7 @@ func (key *Key) NewChildKey(childIdx uint32) (*Key, error) {
 			return nil, err
 		}
 		childKey.FingerPrint = fingerprint[:4]
-		childKey.Key = addPrivateKeys(intermediary[:32], key.Key)
+		childKey.Key = intermediary[:32]
 
 		// Validate key
 		err = validatePrivateKey(childKey.Key)
